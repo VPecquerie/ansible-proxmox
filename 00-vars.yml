@@ -1,0 +1,14 @@
+user:
+  username: vpecquerie
+  display_name: Vincent PECQUERIE
+  homedir: /home/vpecquerie
+  uid: 1000
+  shell: /bin/zsh
+
+packages:
+ - sudo
+ - vim
+ - zsh
+ - python3
+ - python3-pip
+

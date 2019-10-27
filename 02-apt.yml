@@ -1,0 +1,6 @@
+---
+- include_vars: 00-vars.yml
+
+- name: '[APT] Install packages'
+  become: yes
+  apt: pkg={{ packages }} state=latest update_cache=true

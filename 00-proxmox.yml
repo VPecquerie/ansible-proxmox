@@ -3,3 +3,7 @@
   tasks:
    - include: 01-user.yml
    - include: 02-apt.yml
+   - include: 03-updates.yml
+   - include: 04-ssh.yml
+   - include: 05-fail2ban.yml
+   - include: 99-custom.yml

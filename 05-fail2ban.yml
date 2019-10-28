@@ -1,3 +1,6 @@
+---
+- include_vars: 00-vars.yml
+
 - name: '[Fail2ban] Copy configuration'
   copy:
     src: /etc/fail2ban/jail.conf
@@ -15,16 +18,16 @@
     regexp: '^bantime = ([0-9]+)$'
     replace: 'bantime = 5'
 
-- name: '[Fail2ban] Change mail sender'
-  replace:
-    dest: /etc/fail2ban/jail.local 
-    regexp: '^destemail = (.*+)$'
-    replace: 'destemail = {{ user.email }}'
-
 - name: '[Fail2ban] Change mail receiver'
   replace:
     dest: /etc/fail2ban/jail.local 
-    regexp: '^sender = (.*+)$'
+    regexp: '^destemail = '
+    replace: 'destemail = {{ user.email }}'
+
+- name: '[Fail2ban] Change mail sender'
+  replace:
+    dest: /etc/fail2ban/jail.local 
+    regexp: '^sender = '
     replace: 'sender = {{ user.email }}'
 
 # @TODO: Activer le ssh.

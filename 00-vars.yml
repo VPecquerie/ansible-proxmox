@@ -4,11 +4,12 @@ user:
   homedir: /home/vpecquerie
   uid: 1000
   shell: /bin/zsh
-
+  email: contact@vincent-p.fr
+  
 packages:
  - sudo
  - vim
  - zsh
  - python3
  - python3-pip
-
+ - fail2ban

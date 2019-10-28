@@ -3,7 +3,7 @@
 ## TL;DR : One Step Install.
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/VPecquerie/ansible-proxmo/master/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/VPecquerie/ansible-proxmod/master/install.sh | bash
 ```
 
 ## Introduction

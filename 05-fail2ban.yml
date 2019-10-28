@@ -5,25 +5,25 @@
 
 - name: '[Fail2ban] Change max number of auth to 5'
   replace:
-    path: /etc/fail2ban/jail.local 
+    dest: /etc/fail2ban/jail.local 
     regexp: '^maxfailures = ([0-9]+)$'
     replace: 'maxfailures = 5'
 
 - name: '[Fail2ban] Change ban time to 10 minutes'
   replace:
-    path: /etc/fail2ban/jail.local 
+    dest: /etc/fail2ban/jail.local 
     regexp: '^bantime = ([0-9]+)$'
     replace: 'bantime = 5'
 
 - name: '[Fail2ban] Change mail sender'
   replace:
-    path: /etc/fail2ban/jail.local 
+    dest: /etc/fail2ban/jail.local 
     regexp: '^destemail = (.*+)$'
     replace: 'destemail = {{ user.email }}'
 
 - name: '[Fail2ban] Change mail receiver'
   replace:
-    path: /etc/fail2ban/jail.local 
+    dest: /etc/fail2ban/jail.local 
     regexp: '^sender = (.*+)$'
     replace: 'sender = {{ user.email }}'
 

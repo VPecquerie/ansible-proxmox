@@ -1,35 +1,35 @@
 - name: '[SSH] Change port to 2222'
   replace:
-    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
     regexp: '#Port 22'
     replace: 'Port 2222'
 
 - name: '[SSH] Disable password logins'
   replace:
-    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
     regexp: 'PasswordAuthentication yes'
     replace: 'PasswordAuthentication no'
 
 - name: '[SSH] Disable password logins'
   replace:
-    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
     regexp: 'PermitRootLogin yes'
     replace: 'PermitRootLogin no'
 
 - name: '[SSH] Disable X11 Forwarding'
   replace:
-    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
     regexp: 'X11Forwarding yes'
     replace: 'X11Forwarding no'
 
 - name: '[SSH] Check end user DNS'
   replace:
-    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
     regexp: '#UseDNS no'
     replace: 'UseDNS yes'
 
 - name: '[SSH] Reduce number of tries'
   replace:
-    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
     regexp: '#MaxAuthTries 6'
     replace: 'MaxAuthTries 3'

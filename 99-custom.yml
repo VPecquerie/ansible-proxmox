@@ -1,0 +1,20 @@
+---
+- include_vars: 00-vars.yml
+
+- name: '[CUSTOM] Clone dotfiles'
+  git: 
+    repo: 'https://github.com/VPecquerie/dotfiles.git'
+    dest: '{{user.homedir}}/.dotfiles'
+
+- name: '[CUSTOM] Install dotfiles'
+  command: 'bash install.sh'
+  args:
+    chdir: '{{user.homedir}}/.dotfiles'
+
+- name: '[CUSTOM] Fix HomeDir permissions'
+  file: 
+    path: '{{user.homedir}}'
+    state: directory
+    owner: '{{user.username}}'
+    group: '{{user.username}}'
+    recurse: yes
